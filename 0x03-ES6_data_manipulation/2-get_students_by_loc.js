@@ -1,10 +1,9 @@
-export default function getStudentsByLocation(students, city) {
-  if (typeof city !== 'string') {
-    throw new TypeError('City must be a string');
-  }
-  if (!Array.isArray(students)) {
-    throw new TypeError('Students must be an array of objects');
-  }
+const getStudentsByLocation = (students, city) => {
+  const studentsLocation = students.filter(
+    (student) => student.location === city,
+  );
 
-  return students.filter((student) => student.location === city);
-}
+  return studentsLocation;
+};
+
+export default getStudentsByLocation;
