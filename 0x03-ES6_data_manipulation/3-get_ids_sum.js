@@ -1,7 +1,9 @@
-export default function getStudentIdsSum(students) {
-  if (!Array.isArray(students)) {
-    throw new TypeError(`${students} is not a valid array`);
-  }
-  const studentIdArray = students.map((student) => student.id);
-  return studentIdArray.reduce((accumulator, currentValue) => accumulator + currentValue);
-}
+const getStudentIdsSum = (students) => {
+  const all = students
+    .map((student) => student.id)
+    .reduce((studentPrev, studentCurrent) => studentPrev + studentCurrent);
+
+  return all;
+};
+
+export default getStudentIdsSum;
